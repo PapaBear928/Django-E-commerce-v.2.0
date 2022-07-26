@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Delivery address{% endblock %}
+{% block content %}
+
+<div class="container">
+  <div class="col-12">
+    <h1 class="h2">Your Payment has been successful</h1>
+  </div>
+  <div class="col-12">
+    <p>Your order summary</p>
+  </div>
+  <hr>
+  <div class="col-12">
+    <p>View all <a href="{% url 'account:user_orders'%}">orders</a></p>
+  </div>
+</div>
+
+
+{% endblock %}
