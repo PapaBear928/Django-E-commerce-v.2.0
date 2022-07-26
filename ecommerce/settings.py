@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-^jge+c+^0%*j41m==_q@j4!f3+^iu2++vao7zrifdr3upzw^u=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','predatoryplants.herokuapp.com']
 
 GOOGLE_MAPS_API_KEY = 'AIzaSyB4qnoRFg0sXcIiw_YRcnmO8pGmJDpomiQ'
 
