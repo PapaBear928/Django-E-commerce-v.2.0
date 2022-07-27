@@ -2,22 +2,27 @@
 {% block title %}Edit Addresses{% endblock %}
 
 {% block content %}
-<main class="pt-5">
+
+<main class="col-9 mx-auto">
+    <br><br>
     <div class="container px-0" style="max-width: 1000px">
         <div class="col-12">
-            <h1 class="h2">Your Addresses</h1>
+            <h1 class="h2"> List of your adresses.</h1><br>
         </div>
         <div class="col-12 d-flex justify-content-between">
-            <div>Manage your <b>orders</b> and personal details</div>
+            <div>Here you can manage your <b>adresses</b>  products and manage them</div>
 
             <div>
-                <div><a href="{% url 'account:edit_details' %}">Change Details</a></div>
+                <div><a href="{% url 'account:dashboard' %}">Back to dashboard</a></div>
             </div>
         </div>
+        <br>
         <hr/>
     </div>
 
-<div class="container px-0">
+
+<br>
+<div class="container ">
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
     <div class="col">
       <a href="{% url 'account:add_address' %}" class="text-reset text-decoration-none" role="button"
