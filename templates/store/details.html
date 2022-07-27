@@ -1,66 +1,66 @@
 {% extends "base.html" %}
+{% load static %}
+{% block title %}
+{% if product %}{{ product.title }}{% else %}Product{% endif %}
+{% endblock %}
 
 {% block content %}
+
+<div class="container">
 {% if messages %}
-<div class="alert alert-warning" alert-{{ message.tags }}" role="alert">
+<div class="alert alert-warning" alert-{{ message.tags }} role="alert">
 {% for message in messages  %}
-  {{message|safe}} - <a href="{% url "account:users_favourites" %}" class="alert-link">Your Favourites</a>.
+    {{message|safe}} - <a href="{% url 'account:users_favourites' %}" class="alert-link">Your Favourites</a>.
 {% endfor %}
 </div>
 {% endif %}
 
-    <main class="pt-5">
-        <div class="row g-3">
-            <div class="col-md-5 col-lg-5 order-md-first bg-light">
-
-                {% for image in product.product_image.all %}
-                {% if image.is_feature %}
-                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image" src="{{ image.image.url }}"
-                     alt="{{ image.image.alt_text }}">
-                {% else %}
-                <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image"
-                     src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
-                {% endif %}
-                {% endfor %}
-
-            </div>
-            <div class="col-md-7 col-lg-7 ps-md-3 ps-lg-5">
-                <h1 class="mb-0 h4">{{ product.title }}</h1>
-
-                <p>{{ products.description|slice:":355" }}</p>
-                <div class="border">
-                    <div class="col border-bottom">
-                        <div class="row p-3">
-                            <div class="col-6"></div>
-                            <div class="col-6 text-end"><span
-                                    class="h4 fw-bold">{{ product.normal_price }} PLN(Polish zloty)</span></div>
-                        </div>
+    <div class="row g-3">
+        <div class="col-md-5 ps-3 col-lg-5 order-md-last p-0 order-1">
+            <div class="d-grid gap-2">
+                <div class="d-flex d-flex-inline justify-content-between">
+                    <div><span class="h3">{{ product.normal_price }} PLN(Polish zloty)</span>
+                        <p class="text-muted">includes all taxes</p>
                     </div>
-                    <div class="col">
-                        <div class="row p-3">
-                            <div class="col-6">
-                                <label for="select"><b>Qty</b></label>
-                                <select id="select">
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                    <option value="7">7</option>
-                                    <option value="8">8</option>
-                                    <option value="9">9</option>
-                                    <option value="10">10</option>
-                                </select>
+                    <div>
+                        <label for="select">Quantity</label>
+                        <select id="select" class="h5 store-select-dropdown">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </div>
+                <hr>
+                <hr>
+                <button type="button" id="add-button" value="{{product.id}}" class="btn btn-success fw500">Add to basket</button>
+                <a href="{% url 'account:user_wishlist' product.id  %}" class="btn btn-light fw500" role="button" aria-disabled="true">Add to Wish List</a>
+            </div>
+        </div>
+        <div class="col-md-7 col-lg-7 p-0">
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-12">
+                        <div class="card-body p-1">
+                            <h1 class="mb-0 h2 pe-4 pb-4">{{ product.title }}</h1>
+                            <div class="bg-light">
 
-                            </div>
-                            <div class="col-12 text-end">
-
-                                <button type="button" id="add-button" value="{{ product.id }}"
-                                        class="btn btn-secondary fw500"> Add to your cart
-                                </button>
-                                <a href="{% url 'account:add_to_favourites' product.id %}" class="btn btn-primary fw500"
-                                   role="button" data-bs-toggle="button">Add to Favourites</a>
+                                {% for image in product.product_image.all %}
+                                {% if image.is_feature %}
+                                <img class="img-fluid mx-auto d-block" width="200px" alt="Responsive image"
+                                     src="{{ image.image.alt_text }}" alt="{{ image.image.alt_text }}">
+                                {% else %}
+                                <img class="img-fluid d-block-inline pt-3" width="100px" alt="Responsive image"
+                                     src="{{ image.image.url }}" alt="{{ image.image.alt_text }}">
+                                {% endif %}
+                                {% endfor %}
 
                             </div>
                         </div>
@@ -68,10 +68,9 @@
                 </div>
             </div>
         </div>
+    </div>
 
-    </main>
-</div>
-<script>
+    <script>
         $(document).on('click', '#add-button', function (e) {
             e.preventDefault();
             console.log($('#select option:selected').text())
@@ -92,7 +91,5 @@
         })
 
 
-</script>
-
-
+    </script>
 {% endblock %}
