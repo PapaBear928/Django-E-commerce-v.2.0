@@ -2,12 +2,25 @@
 {% block title %}Your favourites{% endblock %}
 
 {% block content %}
-<div class="col-9 mx-auto">
-    <br>
-    <br>
-    <h1 class="h3">Here you can view your favourites.</h1>
 
-    <hr>
+<main class="col-9 mx-auto">
+    <br><br>
+    <div class="container px-0" style="max-width: 1000px">
+        <div class="col-12">
+            <h1 class="h2"> Your favourites list.</h1>
+        </div>
+        <div class="col-12 d-flex justify-content-between">
+            <div>Here you can manage your <b>favourites</b>  products and manage them</div>
+
+            <div>
+                <div><a href="{% url 'account:dashboard' %}">Back to dashboard</a></div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+</main>
+
+<div class="col-9 mx-auto">
 
     {% if favourites %}
     {% for products in favourites %}
@@ -30,10 +43,12 @@
 
     {% endfor %}
     {% else %}
-    <p class="card-text">Unfortunately, you don't have any products in your Favourites list.</p>
+    <br>
+    <p class="card-text">Unfortunately, you don't have any products in your <b>Favourites</b> list.</p>
     {% endif %}
-
-
+    <div>
+        <div><a href="{% url 'store:all_products' %}">Change it up and have a look in the shop</a></div>
+    </div>
 </div>
 
 {% endblock %}
