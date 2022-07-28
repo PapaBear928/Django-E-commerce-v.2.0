@@ -11,15 +11,16 @@
 -Adding missing or empty pages (e.g. stationary shops)<br>
 -STRIPE was replaced by PayPal<br>
 -Tests<br>
+-Minor changes<br>
 
-<h4>Next plan?</h4><br>
--Deploy on Heroku<br>
+
 
 <h4>Used tech:<br>
 Python 3.10.2<br>
 HTML5<br>
 CSS<br>
-AJAX<br></h4>
+AJAX<br>
+Bootstrap 5.1.3<br></h4>
 
 
 <h3>SETUP(as if someone didn't know that):</h3>
@@ -40,6 +41,15 @@ AJAX<br></h4>
 <i>py manage.py runserver</i>
 
 <h3>This app has email verification system, so be attention to use existing email address!!!</h3>
+
+<h4>Of course, you can use one of my test accounts.</h4>
+<h5>Admin account</h5>
+<i>login: test@test.com	  password:superuser </i>
+
+
+<h5>Regular account</h5>
+<i>user@user.com  password:normaluser1</i>
+
 
 <h2>Features</h2>
 The main feature of this project was creating an online store, which will include all features that the real shop has.In addition, following the example of many other shops, a blog has been added so that the shop developers can share their thoughts with shoppers. The blog module also has a comment system implemented.
