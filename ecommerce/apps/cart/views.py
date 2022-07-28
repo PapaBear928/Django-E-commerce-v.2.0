@@ -50,6 +50,6 @@ def cart_update(request):
 		cart.update(product=product_id, qty=product_qty)
 
 		cartqty = cart.__len__()
-		carttotal = cart.get_total_price()
-		response = JsonResponse({'qty': cartqty, 'subtotal': carttotal})
+		cartsubtotal = cart.get_subtotal_price()
+		response = JsonResponse({'qty': cartqty, 'subtotal': cartsubtotal})
 		return response

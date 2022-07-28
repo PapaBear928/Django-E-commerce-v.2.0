@@ -1,17 +1,18 @@
 import json
+from .models import DeliveryOptions
 
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.http import JsonResponse, HttpResponseRedirect
+
 from ecommerce.apps.account.models import Address
 from ecommerce.apps.cart.cart import Cart
 from ecommerce.apps.orders.models import Order, OrderItem
 
+
 from paypalcheckoutsdk.orders import OrdersGetRequest
 from .paypal import PayPalClient
-
-from .models import DeliveryOptions
 
 
 @login_required
@@ -37,7 +38,7 @@ def cart_update_delivery(request):
             session["purchase"]["delivery_id"] = delivery_type.id
             session.modified = True
 
-        response = JsonResponse({"total": updated_total_price, "delivery_price": delivery_type.delivery_price})
+        response = JsonResponse({"total": updated_total_price, "delivery_price": delivery_type.delivery_price, })
         return response
 
 

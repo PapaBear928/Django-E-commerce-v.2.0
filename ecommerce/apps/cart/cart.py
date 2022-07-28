@@ -66,19 +66,19 @@ class Cart():
 	def get_total_price(self):
 		"""Shows the price after shipping costs"""
 		newprice = 0.00
-		before_delivery = sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
+		subtotal = sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
 
 		if "purchase" in self.session:
 			newprice = DeliveryOptions.objects.get(id=self.session["purchase"]["delivery_id"]).delivery_price
 
-		total = before_delivery + Decimal(newprice)
+		total = subtotal + Decimal(newprice)
 		return total
 
 
 
 
 	def cart_update_delivery(self, deliveryprice=0):
-		subtotal = sum(Decimal(item['price']) * item['qty'] for item in self.cart.values())
+		subtotal = sum(Decimal(item['price']) * item["qty"] for item in self.cart.values())
 		total = subtotal + Decimal(deliveryprice)
 		return total
 
