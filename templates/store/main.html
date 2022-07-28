@@ -6,13 +6,14 @@
 <div class="py-5 text-center container">
     <div class="row py-lg-5">
         <div class="col-lg-6 col-md-8 mx-auto">
-            <h1 class="h1 fw-bold">Seedlings, seeds, fertilizers, accessories.</h1>
+            <h1 class="h1 fw-bold">Seedlings, seeds, fertilizers and accessories.</h1>
             <br>
-            <p class="lead text-muted">Welcome on board! Our store its the best place fo enthusiasts of insectivorous
-                plants.
-                Here you will find absolutely everything you need to establish a breeding farm and nurture your plants.
-                Also check out our blog, where we publish interesting aspects of plant breeding.
+            <p class="lead text-muted">Welcome on board! Our store is the best place for lovers of insectivores
+                plants. Here you will find absolutely everything you need to start your own farm and cultivate the
+                plants you already have. By shopping with us, you support the family business of true enthusiasts.
+                We also try to convey our passion on our blog,where we publish interesting aspects of plant breeding.
             </p>
+            <br>
             {% if user.is_authenticated %}
             <a type="button" href="{% url 'store:all_products' %}" class="btn btn-primary my-2">Lets get started</a>
             {% else %}
