@@ -48,7 +48,8 @@ Bootstrap 5.1.3<br></h4>
 
 
 <h5>Regular account</h5>
-<i>user@user.com  password:normaluser1</i>
+<i>Name: Bob bob@bob.com  password:anotherpassword1</i>
+
 
 
 <h2>Features</h2>
