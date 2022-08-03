@@ -33,16 +33,16 @@ Swagger UI 4.12.0 <br></h4>
 <h4>Then, after your venv folder is created open it by: </h4>
 <i>venv\scripts\activate</i>
 
-<h4>And then install requirements included in field requirements.txt </h4>
+<h4>And then install requirements included in field requirements.txt :</h4>
 <i>pip install -r requirements.txt</i>
 
 <h4>And then migrate files </h4>
 <i>py manage.py migrate --run-syncdb</i>
 
-<h4>After installation complete you can run server with project </h4>
+<h4>After installation complete you can run server with project :</h4>
 <i>py manage.py runserver</i>
 
-<h3>This app has email verification system, so be attention to use existing email address!!!</h3>
+<h3>This app has email verification system, so be attention to use existing email address!</h3>
 
 <h4>Of course, you can use one of my test accounts.</h4>
 <h5>Admin account</h5>
