@@ -17,15 +17,17 @@
 
 <h4>Used tech:<br>
 Python 3.10.2<br>
+Django 4.0.4<br>
 HTML5<br>
 CSS<br>
 AJAX<br>
-Bootstrap 5.1.3<br></h4>
+Bootstrap 5.1.3<br>
+Swagger UI 4.12.0 <br></h4>
 
 
 <h3>SETUP(as if someone didn't know that):</h3>
 
-<h4>To run setup first create virtual environment</h4>
+<h4>To run setup first create virtual environment:</h4>
 <i>py -m venv venv</i>
 
 <h4>Then, after your venv folder is created open it by: </h4>

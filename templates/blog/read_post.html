@@ -15,6 +15,7 @@
               <a class="nav-link active" aria-current="page" href="{% url 'blog:blog_main' %}">Return to previous page</a>
 
               <div class="col-12"><h1>{{post.title}}</h1></div>
+              <br><br>
               <div class="col-12"><p>{{post.content|safe}}</p></div>
 
           </div>
@@ -23,16 +24,21 @@
       <a class="nav-link active" aria-current="page" href="{% url 'blog:blog_main' %}">Return to previous page</a>
           <div class="col-md-12">
               {% with comments.count as total_comments %}
-              <h3>{{ total_comments }} comment {{ total_comments|pluralize }}</h3>
+              <br>
+              <h3>{{ total_comments }} comment for this article. {{ total_comments|pluralize }}</h3>
+              <br>
               {% endwith %}
               {% for comment in comments %}
-              Comment {{ forloop.counter }} by {{comment.name }}
+              Comment {{ forloop.counter }} by <b>{{comment.name }}</b>
+
               on {{ comment.publish }}
+              <br>
+              <br>
               {{ comment.content|linebreaks }}
               {% empty %}
               <p> There are no comments yet</p>
               {% endfor %}
-              <h3>Comment this article</h3>
+              <h3>Comment this article:</h3>
 
               <form id="myForm" method="post">
                   {{ comment_form.as_p }}
