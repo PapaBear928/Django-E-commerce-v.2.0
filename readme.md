@@ -1,8 +1,8 @@
 <h1> Predatory Plants Shop - E-commerce shop </h1>
 <h2> This is my variation on an e-commerce theme created using Django. Fully functional, with CRUD system, and BLOG module </h2>
 
-*Link to version 1.0 here: https://github.com/PapaBear928/Django-E-commerce<br>
-*Link to version 1.1 here: https://github.com/PapaBear928/Django-E-commerce-v.1.1
+*Link to version 1.0 here: https://github.com/klapaucius1000/Django-E-commerce<br>
+*Link to version 1.1 here: https://github.com/klapaucius1000/Django-E-commerce-v.1.1
 
 
 
